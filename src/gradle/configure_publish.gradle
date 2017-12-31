@@ -1,0 +1,44 @@
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven-publish'
+
+def bintrayUser = 'imanushin'
+def bintrayPassword = rootProject.hasProperty('bintray_key') ? rootProject['bintray_key'] : "no-key"
+
+def needPublish = ext.isRelease
+
+bintray {
+    user = bintrayUser
+    key = bintrayPassword
+    publications = ['JarPublication']
+    pkg {
+        repo = 'im-public-artifacts'
+        name = project.name
+        userOrg = bintrayUser
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/imanushin/javakdb.git'
+        publish = true
+        dryRun = !needPublish
+
+        version {
+            name = project.version
+            desc = 'Initial version of Java KDB api'
+            mavenCentralSync()
+        }
+    }
+}
+
+task sourceJar(type: Jar) {
+    from sourceSets.main.allJava
+}
+
+publishing {
+    publications {
+        JarPublication(MavenPublication) {
+            from components.java
+
+            artifact sourceJar {
+                classifier "sources"
+            }
+        }
+    }
+}

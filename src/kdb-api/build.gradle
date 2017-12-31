@@ -1,2 +1,3 @@
 apply from: "${rootProject.projectDir}/gradle/configure_kotlin.gradle"
+apply from: "${rootProject.projectDir}/gradle/configure_publish.gradle"
 

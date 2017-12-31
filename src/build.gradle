@@ -5,11 +5,27 @@ buildscript {
 
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:$gradle_bintray_plugin_version"
     }
 }
+
+def baseVersion = "1.0.0"
+
+def buildNumber = hasProperty('build.number') ? project['build.number'] : "-SNAPSHOT"
+
+
+
+version = baseVersion + buildNumber
 
 subprojects {
     repositories {
         jcenter()
     }
+
+    ext {
+        isRelease = rootProject.hasProperty('build.number')
+    }
+
+    group = "com.imanushin"
+    version = rootProject.version
 }
