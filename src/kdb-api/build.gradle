@@ -1,14 +1,2 @@
 apply from: "${rootProject.projectDir}/gradle/configure_kotlin.gradle"
 
-apply plugin: 'java'
-
-repositories {
-    jcenter()
-}
-
-// In this section you declare the dependencies for your production and test code
-dependencies {
-    compile "org.slf4j:slf4j-api:$slf4j_version"
-
-    testCompile 'junit:junit:4.12'
-}
