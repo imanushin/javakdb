@@ -1,1 +1,5 @@
 apply from: "${rootProject.projectDir}/gradle/configure_kotlin.gradle"
+
+dependencies {
+    compile project (":kdb-api")
+}

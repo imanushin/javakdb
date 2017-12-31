@@ -8,3 +8,8 @@ dependencies{
 
     testCompile 'io.kotlintest:kotlintest:$kotlin_test_version'
 }
+
+compileJava{
+    targetCompatibility = JavaVersion.VERSION_1_9
+    sourceCompatibility = JavaVersion.VERSION_1_9
+}
