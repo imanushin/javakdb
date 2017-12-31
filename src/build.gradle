@@ -11,7 +11,7 @@ buildscript {
 
 def baseVersion = "1.0.0"
 
-def buildNumber = hasProperty('build.number') ? project['build.number'] : "-SNAPSHOT"
+def buildNumber = hasProperty('build.number') ? "." + project['build.number'] : "-SNAPSHOT"
 
 
 
