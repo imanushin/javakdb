@@ -13,7 +13,7 @@ install: /bin/true
 
 before_script: cd src
 
-script: gradlew test
+script: ./gradlew test
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
