@@ -1,4 +1,4 @@
-include 'kbp-api'
-include 'kbp-examples'
+include 'kdb-api'
+include 'kdb-examples'
 
 rootProject.name = 'kdb-kotlin-api'
