@@ -11,6 +11,8 @@ cache:
 
 install: /bin/true
 
+before_script: cd src
+
 script: gradlew test
 
 after_success:
