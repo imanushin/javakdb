@@ -11,7 +11,9 @@ cache:
 
 install: /bin/true
 
-before_script: cd src
+before_script: 
+  - cd src
+  - chmod +x gradlew
 
 script: ./gradlew test
 
