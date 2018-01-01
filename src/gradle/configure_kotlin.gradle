@@ -9,7 +9,7 @@ dependencies {
     //testCompile 'io.kotlintest:kotlintest:$kotlin_test_version'
 }
 
-def bytecodeVersion = JavaVersion.VERSION_1_9
+def bytecodeVersion = JavaVersion.VERSION_1_8
 
 compileJava {
     targetCompatibility = bytecodeVersion

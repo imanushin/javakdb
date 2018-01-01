@@ -1,19 +1,25 @@
 apply from: "${rootProject.projectDir}/gradle/configure_kotlin.gradle"
 
 dependencies {
-    compile "org.openjdk.jmh:jmh-core:$jmh_core_version"
-    compile "org.openjdk.jmh:jmh-generator-annprocess:$jmh_core_version"
-
     compile project(":kdb-api")
     compile project(":kdb-kx-api")
 }
 
+apply plugin: "application"
 apply plugin: "me.champeau.gradle.jmh"
 
+mainClassName = "com.imanushin.performance.StartKt"
+
+task singleJar(type: Jar) {
+    manifest {
+        attributes(
+                "Main-Class": mainClassName
+        )
+    }
+    from { configurations.test.collect { it.isDirectory() ? it : zipTree(it) } } with jar
+}
 
 jmh {
-    include = ['.*']
-    humanOutputFile = null
-    warmupIterations = 1
-    iterations = 1
+    fork = 0
+    //jmhVersion = "1.8"
 }
