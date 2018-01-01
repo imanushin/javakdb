@@ -13,9 +13,9 @@ def baseVersion = "1.0.0"
 
 def buildNumber = hasProperty('build.number') ? "." + project['build.number'] : "-SNAPSHOT"
 
-
-
 version = baseVersion + buildNumber
+
+println("Version: $version; build number - $buildNumber")
 
 subprojects {
     repositories {
