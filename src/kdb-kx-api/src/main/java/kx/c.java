@@ -50,6 +50,7 @@ import javax.net.ssl.SSLSocketFactory;
  2)Sending an async message using ks() connection.ks("functionName",args); 3)Awaiting an incoming async message using
  k() Object object=connection.k(); When the connection is no longer required, it may be closed via connection.close();
  */
+@SuppressWarnings("deprecation")
 public class c{
   /**
    encoding specifies the character encoding to use when [de]-serializing strings
