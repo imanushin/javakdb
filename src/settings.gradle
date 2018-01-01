@@ -1,5 +1,6 @@
 include 'kdb-api'
 include 'kdb-examples'
 include 'kdb-kx-api'
+include 'kdb-performance'
 
 rootProject.name = 'kdb-kotlin-api'
