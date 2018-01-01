@@ -20,6 +20,5 @@ task singleJar(type: Jar) {
 }
 
 jmh {
-    fork = 0
-    //jmhVersion = "1.8"
+    jmhVersion = "1.19"
 }
