@@ -8,8 +8,8 @@ import java.util.concurrent.TimeUnit
 
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
-@Warmup(iterations = 0)
-@Measurement(iterations = 1)
+@Warmup(iterations = 100)
+@Measurement(iterations = 1000)
 open class SimpleSum {
 
     companion object {
