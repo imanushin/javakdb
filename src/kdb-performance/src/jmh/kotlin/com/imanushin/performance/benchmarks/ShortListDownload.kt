@@ -8,10 +8,10 @@ import java.util.concurrent.TimeUnit
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
 @Warmup(iterations = 10)
 @Measurement(iterations = 100)
-open class SimpleSum {
+open class ShortListDownload {
 
     private companion object {
-        val kdbExpression = "2+3"
+        val kdbExpression = "til 1024"
     }
 
     @Benchmark

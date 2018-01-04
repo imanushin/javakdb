@@ -6,12 +6,12 @@ import java.util.concurrent.TimeUnit
 
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
-@Warmup(iterations = 10)
-@Measurement(iterations = 100)
-open class SimpleSum {
+@Warmup(iterations = 5)
+@Measurement(iterations = 10)
+open class HugeListDownload {
 
     private companion object {
-        val kdbExpression = "2+3"
+        val kdbExpression = "til 1024*1024*64"
     }
 
     @Benchmark
