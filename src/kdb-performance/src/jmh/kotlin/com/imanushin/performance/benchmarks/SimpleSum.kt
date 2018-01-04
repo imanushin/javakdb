@@ -1,9 +1,7 @@
 package com.imanushin.performance.benchmarks
 
+import com.imanushin.performance.KdbEnvironment.kxConnection
 import org.openjdk.jmh.annotations.*
-import org.openjdk.jmh.results.format.ResultFormatType
-import org.openjdk.jmh.runner.Runner
-import org.openjdk.jmh.runner.options.OptionsBuilder
 import java.util.concurrent.TimeUnit
 
 @BenchmarkMode(Mode.AverageTime)
@@ -12,14 +10,14 @@ import java.util.concurrent.TimeUnit
 @Measurement(iterations = 1000)
 open class SimpleSum {
 
-    companion object {
-        private val kxConnection = kx.c("localhost", 40000)
+    private companion object {
+        val kdbExpression = "2+3"
     }
 
     @Benchmark
     @BenchmarkMode(Mode.Throughput, Mode.AverageTime, Mode.SampleTime, Mode.SingleShotTime)
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
-    fun test() {
-        kxConnection.k("2+3")
+    fun testOrigin() {
+        kxConnection.k(kdbExpression)
     }
 }
