@@ -6,6 +6,8 @@ def bintrayPassword = rootProject.hasProperty('bintray_key') ? rootProject['bint
 
 def needPublish = ext.isRelease
 
+// // use the following command line: ./gradlew bintrayUpload -Pbintray_key=${BINTRAY_KEY}
+
 bintray {
     user = bintrayUser
     key = bintrayPassword

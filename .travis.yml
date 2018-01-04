@@ -15,7 +15,7 @@ before_script:
   - cd src
   - chmod +x gradlew
 
-script: ./gradlew bintrayUpload -Pbuild.number=${TRAVIS_BUILD_NUMBER} -Pbintray_key=${BINTRAY_KEY}
+script: ./gradlew test
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
